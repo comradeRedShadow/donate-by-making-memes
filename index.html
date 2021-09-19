@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="master.css">
+</head>
+<body>
+
+    <!-- show this div when user submit the form -->
+    <div id="custom_or_buildin_template" >
+        <div class="card">
+            <div id="buildin" class="class-body">
+                <button class="btn btn-primary" onclick="show_buildin_templates()">ရှိပြီးသားပုံကို သုံးမယ်</button>
+            </div>
+
+            <div class="class-body">
+                <input type="file" id="custom_up" name="template_upload">
+                <button class="btn btn-primary" onclick="custom_tp()">ကိုယ့်ပုံ ကိုသုံးမယ်</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="buildin_templates">
+        <button style="display: block; width: 100%;" class="btn btn-danger" onclick="show_buildin_templates(); choose_template()">Cancle</button>
+        <img src="images/1.jpeg" id="1" alt="Myanmar Memes" onclick="drawImage(true, this.id)">
+        <img src="images/2.jpeg" id="2" alt="Myanmar Memes">
+        <img src="images/3.jpeg" id="3" alt="Myanmar Memes">
+        <img src="images/4.jpeg" id="4" alt="Myanmar Memes">
+        <img src="images/5.jpeg" id="5" alt="Myanmar Memes">
+        <img src="images/6.jpeg" id="6" alt="Myanmar Memes">
+        <img src="images/7.jpeg" id="7" alt="Myanmar Memes">
+        <img src="images/8.jpeg" id="8" alt="Myanmar Memes">
+        <img src="images/9.jpeg" id="9" alt="Myanmar Memes">
+        <img src="images/10.jpeg" id="10" alt="Myanmar Memes">
+        <img src="images/11.jpeg" id="11" alt="Myanmar Memes">
+        <img src="images/12.jpeg" id="12" alt="Myanmar Memes">
+        <img src="images/13.jpeg" id="13" alt="Myanmar Memes">
+        <img src="images/14.jpeg" id="14" alt="Myanmar Memes">
+        <img src="images/15.jpeg" id="15" alt="Myanmar Memes">
+        <img src="images/16.jpeg" id="16" alt="Myanmar Memes">
+    </div>
+
+    <!-- choose style of text -->
+    <div id="choose_style">
+        <small>စာ အကြီး၊ အသေး</small>
+        <input type="text" id="font_size"><br>
+
+        <small>Justify</small>
+        <input type="text" id="justify">
+
+        <br>
+        <button class="btn btn-success" onclick="set_style()">Continue</button>
+    </div>
+
+    <div id="mememaker">
+        <canvas id="canvas">
+        </canvas>
+        
+        <div id="toolbar">
+            <button type="button" class="btn btn-secondary" onclick="choose_template()" id="choose_file_btn">ဓတ်ပုံ ရွေးပါ <i class="fas fa-file-image"  style="margin-left: 5px;;"></i></button><br>
+
+            <div> 
+                <small>အပါ်ကစာ</small>
+                <input type="text" id="up_text"><br>
+
+                <small>အောက်ကစာ</small>
+                <input type="text" id="down_text">
+            </div>
+
+            <button class="btn btn-danger" onclick="removeObject()">ဖျက်မည် <i class="fas fa-trash-alt" style="margin-left: 5px;"></i></button>
+
+            <button class="btn btn-secondary" onclick="addText(default_text)">စာထည့်မည် <i class="fa fa-plus" aria-hidden="true" style="margin-left: 5px;"></i></button>
+        
+            <button class="btn btn-secondary" id="choose_style_btn" onclick="choose_style_fun()">စာ Style <i class="fa fa-font" aria-hidden="true" style="margin-left: 5px;"></i></button>
+            
+            <a id="image_to_save" style="display: none;" download="meme.png"></a>
+            <button type="button" class="btn btn-primary" id="save" onclick="saveImage()">ပုံကိုသိမ်းမယ်<i class="far fa-save" style="margin-left: 5px;"></i></button>
+        </div>
+
+    </div>
+
+    <script src="fontawesome-free-5.15.4-web/js/all.js"></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.2/fabric.min.js"></script> 
+    <script src="canvas.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
