@@ -56,6 +56,7 @@ function custom_tp()
         custom_or_buildin_template.style.display = 'none';
 
         drawImage()
+        choose_template()
 
     }, {once: true})
     custom_up.click()
