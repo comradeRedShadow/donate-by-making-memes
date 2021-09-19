@@ -162,10 +162,6 @@ margin: top, right, bottom, left
         width: 100%;
     }
     
-    #toolbar div small {
-        font-size: 11px;
-    }
-    
     #toolbar div {
         margin: auto;
         text-align: center;
