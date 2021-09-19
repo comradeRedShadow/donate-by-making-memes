@@ -34,6 +34,7 @@ function drawImage(build_in=false, num)
         }).then((data) => {
             fReader.readAsDataURL(data);
             document.getElementById("buildin_templates").style.display = 'none';
+            document.getElementById('custom_or_buildin_template').style.display = 'none'
         })
     }
     else {fReader.readAsDataURL(custom_up.files[0])}
