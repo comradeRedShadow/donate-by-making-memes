@@ -33,7 +33,7 @@ function drawImage(build_in=false, num)
             return data.blob()
         }).then((data) => {
             fReader.readAsDataURL(data);
-            document.getElementById("buildin_templates");
+            document.getElementById("buildin_templates").style.display = 'none';
         })
     }
     else {fReader.readAsDataURL(custom_up.files[0])}
