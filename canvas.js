@@ -32,7 +32,8 @@ function drawImage(build_in=false, num)
         fetch(`./images/${num}.jpeg`).then((data) => {
             return data.blob()
         }).then((data) => {
-            fReader.readAsDataURL(data)
+            fReader.readAsDataURL(data);
+            document.getElementById("buildin_templates");
         })
     }
     else {fReader.readAsDataURL(custom_up.files[0])}
