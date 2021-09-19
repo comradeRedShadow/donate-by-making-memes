@@ -19,8 +19,20 @@ function choose_style_fun() {
     {
         choose_style.style.display = 'block';
         
-        font_size.value = c.getActiveObject().fontSize;
-        justify.value = c.getActiveObject().textAlign;
+        let fz = c.getActiveObject().fontSize;
+        let jus = c.getActiveObject().textAlign
+
+        if(typeof(fz) != "number")
+        {
+            font_size.value = 16;
+        }
+        if(jus != "center" || jus != "middle"|| jus == "left" || jus == "right")
+        {
+            justify.value = 'left';
+        } else {
+            font_size.value = fz;
+            justify.value = jus;
+        }
     } else {choose_style.style.display = 'none';}
     
 }

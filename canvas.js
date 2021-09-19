@@ -1,6 +1,6 @@
 const c = new fabric.Canvas("canvas");
 
-let canvas_config = {width: 400, height: 400, backgroundColor: '#ffffff'}
+let canvas_config = {width: window.innerWidth - 20, height: 400, backgroundColor: '#ffffff'}
 
 c.setDimensions(canvas_config);
 
