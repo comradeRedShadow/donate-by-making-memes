@@ -143,9 +143,6 @@ margin: top, right, bottom, left
     }
 
     #mememaker {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-        grid-gap: 20px;
         margin: 5% 10px 0 10px;
         justify-content: center;
         justify-items: center;
