@@ -161,6 +161,10 @@ margin: top, right, bottom, left
         margin-bottom: 20px;
         width: 100%;
     }
+    
+    #toolbar div small {
+        font-size: 11px;
+    }
 
     #toolbar div input {
         width: 200px;
