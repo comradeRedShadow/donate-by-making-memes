@@ -30,9 +30,9 @@ function drawImage(build_in=false, num)
     if(build_in == true)
     {
         fetch(`./images/${num}.jpeg`).then((data) => {
-            return data.arrayBuffer()
+            return data.blob()
         }).then((data) => {
-            fReader.readAsArrayBuffer(data)
+            fReader.readAsDataURL(data)
         })
     }
     else {fReader.readAsDataURL(custom_up.files[0])}
