@@ -154,6 +154,11 @@ margin: top, right, bottom, left
         font-size: 18px;
     }
 
+    #mememaker button {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
     #toolbar div input {
         width: 200px;
     }
