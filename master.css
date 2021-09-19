@@ -167,7 +167,8 @@ margin: top, right, bottom, left
     }
     
     #toolbar div {
-        margin: auto
+        margin: auto;
+        text-align: center;
     }
 
     #toolbar div input {
