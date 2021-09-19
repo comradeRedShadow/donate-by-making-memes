@@ -150,8 +150,7 @@ margin: top, right, bottom, left
         justify-content: center;
         justify-items: center;
         justify-self: center;
-        height: 80vh;
-        font-size: 18px;
+        font-size: auto;
     }
 
     #mememaker button {
