@@ -94,7 +94,6 @@ up_text.addEventListener("keyup", (event) => {
 })
 
 down_text.addEventListener("keyup", (event) => {
-    
     text2.text = down_text.value;
     c.renderAll();
 })

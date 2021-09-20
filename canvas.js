@@ -1,10 +1,15 @@
 const c = new fabric.Canvas("canvas");
 
 let canvas_config = {width: 400, height: 400, backgroundColor: '#ffffff'}
+
+// for mobile
 if(window.innerWidth <= '600')
 {
-    canvas_config = {width: window.innerWidth - 33, height: 400, backgroundColor: '#ffffff'}
-
+    canvas_config.width = window.innerWidth - 33;
+    canvas_config.height = 400
+    fabric.Object.prototype.set({
+        borderScaleFactor: 3
+    })
 }
 
 c.setDimensions(canvas_config);
@@ -61,7 +66,8 @@ let default_text = {
         left: 50,
         right: 50,
         textAlign: "center",
-        fontSize: 20
+        fontSize: 20,
+        lineHeight: 1.2
 }
 
 let text_margin = 5
