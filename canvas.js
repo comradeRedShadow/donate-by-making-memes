@@ -1,6 +1,11 @@
 const c = new fabric.Canvas("canvas");
 
-let canvas_config = {width: window.innerWidth - 20, height: 400, backgroundColor: '#ffffff'}
+let canvas_config = {width: 400, height: 400, backgroundColor: '#ffffff'}
+if(window.innerWidth <= '600')
+{
+    canvas_config = {width: window.innerWidth - 33, height: 400, backgroundColor: '#ffffff'}
+
+}
 
 c.setDimensions(canvas_config);
 
@@ -61,23 +66,27 @@ let default_text = {
 
 let text_margin = 5
 
-// Up
-let up_text_style = {}
-Object.assign(up_text_style, default_text)
-up_text_style.top = text_margin
+function upanddown() {
+    // Up
+    let up_text_style = {}
+    Object.assign(up_text_style, default_text)
+    up_text_style.top = text_margin
 
-// Down
-let down_text_style = {}
-Object.assign(down_text_style, default_text);
-down_text_style.top = canvas_config.height - down_text_style.fontSize - text_margin;
+    // Down
+    let down_text_style = {}
+    Object.assign(down_text_style, default_text);
+    down_text_style.top = canvas_config.height - down_text_style.fontSize - text_margin;
 
 
-text = new fabric.Textbox("အပေါ်ကစာ", up_text_style)
-c.add(text);
+    text = new fabric.Textbox("အပေါ်ကစာ", up_text_style)
+    c.add(text);
 
-text2 = new fabric.Textbox("အောက်ကစာ", down_text_style)
-c.add(text2);
-c.renderAll();
+    text2 = new fabric.Textbox("အောက်ကစာ", down_text_style)
+    c.add(text2);
+    c.renderAll();
+}
+
+upanddown()
 
 function addText(style) {
     txt = new fabric.Textbox("စာ", style)
