@@ -67,7 +67,7 @@ let default_text = {
         right: 50,
         textAlign: "center",
         fontSize: 20,
-        lineHeight: 1.2
+        lineHeight: 1.3
 }
 
 let text_margin = 5
