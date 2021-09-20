@@ -5,7 +5,7 @@ let canvas_config = {width: 400, height: 400, backgroundColor: '#ffffff'}
 // for mobile
 if(window.innerWidth <= '600')
 {
-    canvas_config.width = window.innerWidth - 15;
+    canvas_config.width = window.innerWidth - 25;
     canvas_config.height = 400
     fabric.Object.prototype.set({
         borderScaleFactor: 3
