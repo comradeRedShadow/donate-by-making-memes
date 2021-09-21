@@ -99,12 +99,32 @@ down_text.addEventListener("keyup", (event) => {
 })
 
 function saveImage()
-{
-    let image = new Image(1440, 1440);
-    image.src = c.toDataURL("image/png");
+{   
+    let image = new Image();
+
+    let resize_canvas = document.getElementById("resize_canvas");
+    resize_canvas.width = 600;
+    resize_canvas.height = 600;
+
+    let rc = resize_canvas.getContext("2d");
+
     
-    image_to_save.onload = image_to_save.setAttribute("href", image.src);
-    image_to_save.click()
+
+    let orginal_image = new Image();
+    orginal_image.src = c.toDataURL({format: 'png'});
+
+    orginal_image.onload = () => {
+        rc.imageSmoothingEnabled = true;
+
+        rc.drawImage(orginal_image, 0, 0, resize_canvas.width, resize_canvas.height);
+
+        image.src = resize_canvas.toDataURL({fotmat: 'png'});
+    }
+
+    image.onload = () => {
+        image_to_save.setAttribute("href", image.src);
+        image_to_save.click()
+    }
 
 }
 
