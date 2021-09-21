@@ -104,7 +104,6 @@ function saveImage()
 
     let resize_canvas = document.getElementById("resize_canvas");
     resize_canvas.width = 600;
-    resize_canvas.height = 600;
 
     let rc = resize_canvas.getContext("2d");
 
