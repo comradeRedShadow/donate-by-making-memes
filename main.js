@@ -100,7 +100,7 @@ down_text.addEventListener("keyup", (event) => {
 
 function saveImage()
 {
-    let image = new Image();
+    let image = new Image(canvas_config.width, canvas_config.height);
     image.src = c.toDataURL("image/png");
     
     image_to_save.onload = image_to_save.setAttribute("href", image.src);
