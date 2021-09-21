@@ -14,6 +14,8 @@ if(window.innerWidth <= '600')
     })
 }
 
+window.devicePixelRatio = 2;
+
 let default_text = {
     fontFamily: "Arial",
     editable: true,
