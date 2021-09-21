@@ -1,6 +1,20 @@
 const c = new fabric.Canvas("canvas");
 
+
+// config
 let canvas_config = {width: 400, height: 400, backgroundColor: '#ffffff'}
+
+let default_text = {
+        width: canvas_config.width - 100,
+        fontFamily: "Arial",
+        editable: true,
+        left: 50,
+        right: 50,
+        textAlign: "center",
+        fontSize: 20,
+        lineHeight: 1.3,
+        lockUniScaling: true
+}
 
 // for mobile
 if(window.innerWidth <= '600')
@@ -59,16 +73,7 @@ function drawImage(build_in=false, num)
 let text;
 let text2;
 
-let default_text = {
-        width: canvas_config.width - 100,
-        fontFamily: "Arial",
-        editable: true,
-        left: 50,
-        right: 50,
-        textAlign: "center",
-        fontSize: 20,
-        lineHeight: 1.3
-}
+
 
 let text_margin = 5
 
