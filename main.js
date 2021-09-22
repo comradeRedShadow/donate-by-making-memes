@@ -107,7 +107,7 @@ function saveImage()
         image_to_save.click()
     }
 
-    image.src = c.toDataURL({fotmat: 'jpeg', quality: 0.8});
+    image.src = c.toDataURL({format: 'jpeg', quality: 0.8});
 
 
 }
