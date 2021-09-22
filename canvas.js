@@ -1,20 +1,20 @@
 const c = new fabric.Canvas("canvas");
+const c_style = document.getElementById("canvas");
 
+let dpi = window.devicePixelRatio = 2;
 
 // config
-let canvas_config = {width: 400, height: 400, backgroundColor: '#ffffff'}
+let canvas_config = {width: 577, height: 433, backgroundColor: '#ffffff'}
 
 // for mobile
 if(window.innerWidth <= '600')
 {
     canvas_config.width = window.innerWidth - 25;
-    canvas_config.height = 400
+    canvas_config.height = 433;
     fabric.Object.prototype.set({
         borderScaleFactor: 3
     })
 }
-
-window.devicePixelRatio = 2;
 
 let default_text = {
     fontFamily: "Arial",
@@ -23,9 +23,11 @@ let default_text = {
     left: 0.5*canvas_config.width,
     fontSize: 20,
     lineHeight: 1.3,
-    lockUniScaling: true
+    lockUniScaling: true,
+    strokeWidth: 1,
+    lockScalingX: true,
+    lockScalingY: true
 }
-
 
 c.setDimensions(canvas_config);
 

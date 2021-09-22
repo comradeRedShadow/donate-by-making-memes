@@ -102,29 +102,13 @@ function saveImage()
 {   
     let image = new Image();
 
-    let resize_canvas = document.getElementById("resize_canvas");
-    resize_canvas.width = 600;
-    resize_canvas.height = 700;
-
-    let rc = resize_canvas.getContext("2d");
-
-    
-
-    let orginal_image = new Image();
-    orginal_image.src = c.toDataURL({format: 'png'});
-
-    orginal_image.onload = () => {
-        rc.imageSmoothingEnabled = true;
-
-        rc.drawImage(orginal_image, 0, 0, resize_canvas.width, resize_canvas.height);
-
-        image.src = resize_canvas.toDataURL({fotmat: 'png'});
-    }
-
     image.onload = () => {
         image_to_save.setAttribute("href", image.src);
         image_to_save.click()
     }
+
+    image.src = c.toDataURL({fotmat: 'png'});
+
 
 }
 
