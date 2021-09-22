@@ -107,7 +107,7 @@ function saveImage()
         image_to_save.click()
     }
 
-    image.src = c.toDataURL({fotmat: 'png'});
+    image.src = c.toDataURL({fotmat: 'jpeg'});
 
 
 }
