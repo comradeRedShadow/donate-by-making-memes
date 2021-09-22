@@ -102,16 +102,17 @@ async function saveImage()
 {   
     let image = new Image();
 
-    image_to_save.addEventListener("click", () => {
-        location.reload();
-    }, {once: true})
-
     image.onload = () => {
         c.setWidth(canvas_config.width);
         c.setHeight(canvas_config.height);
 
         image_to_save.setAttribute("href", image.src);
         image_to_save.click();
+
+        canvas.setZoom(1)
+        c.setWidth(canvas_config.width);
+        c.setHeight(canvas_config.height);
+        upanddown();
     }
 
 
