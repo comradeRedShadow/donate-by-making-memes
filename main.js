@@ -98,9 +98,13 @@ down_text.addEventListener("keyup", (event) => {
     c.renderAll();
 })
 
-function saveImage()
+async function saveImage()
 {   
     let image = new Image();
+
+    image_to_save.addEventListener("click", () => {
+        location.reload();
+    }, {once: true})
 
     image.onload = () => {
         c.setWidth(canvas_config.width);
@@ -108,17 +112,14 @@ function saveImage()
 
         image_to_save.setAttribute("href", image.src);
         image_to_save.click();
-
-        location.reload();
     }
 
 
     c.setZoom(4);
     c.setWidth(canvas_config.width * c.getZoom())
     c.setHeight(canvas_config.height * c.getZoom())
+
     image.src = c.toDataURL({format: 'jpeg', quality: 1});
-
-
 }
 
 function removeObject()
