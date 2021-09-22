@@ -1,7 +1,7 @@
 const c = new fabric.Canvas("canvas");
 const c_style = document.getElementById("canvas");
 
-let dpi = window.devicePixelRatio = 2;
+window.devicePixelRatio = 2;
 
 // config
 let canvas_config = {width: 577, height: 433, backgroundColor: '#ffffff'}

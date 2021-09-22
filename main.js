@@ -103,11 +103,20 @@ function saveImage()
     let image = new Image();
 
     image.onload = () => {
+        c.setWidth(canvas_config.width);
+        c.setHeight(canvas_config.height);
+
         image_to_save.setAttribute("href", image.src);
-        image_to_save.click()
+        image_to_save.click();
+
+        location.reload();
     }
 
-    image.src = c.toDataURL({format: 'jpeg', quality: 9});
+
+    c.setZoom(4);
+    c.setWidth(canvas_config.width * c.getZoom())
+    c.setHeight(canvas_config.height * c.getZoom())
+    image.src = c.toDataURL({format: 'jpeg', quality: 1});
 
 
 }
