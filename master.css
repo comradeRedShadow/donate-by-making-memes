@@ -2,6 +2,47 @@
 margin: top, right, bottom, left
 */
 
+@font-face {
+    font-family: 'pyidaungsu';
+    font-weight: normal;
+    src: url('fonts/pyidaungsu-regular.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'pyidaungsu';
+    font-weight: bold;
+    src: url('fonts/pyidaungsu-bold.ttf') format('ttf');
+}
+
+
+.burmese {
+    font-family: 'pyidaungsu';
+    vertical-align: bottom;
+}
+
+.canvas-container {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+@media screen and (max-width: 1200px) {
+    #canvas-wrapper {
+        height: 300px;
+    }
+}
+
+
+
 #custom_or_buildin_template {
     position: absolute;
     width: max-content;
@@ -87,6 +128,7 @@ margin: top, right, bottom, left
     width: 100px;
 }
 
+/*
 #mememaker {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -98,16 +140,18 @@ margin: top, right, bottom, left
     height: 80vh;
     font-size: 25px;
 }
+*/
 
 #mememaker button {
     height: max-content;
-    margin-bottom: 20px;
 }
 
+/*
 #mememaker input[type="text"]
 {
     margin-bottom: 20px;
 }
+*/
 
 #canvas {
     border: 1px solid black;
@@ -117,15 +161,19 @@ margin: top, right, bottom, left
     width: 100%;
 }
 
+/*
 #toolbar div {
     margin: 20px 0 0 20px;
 }
+*/
 
 #toolbar div small {
     display: inline-block;
     width: 100px;
 }
 
+/*
 #toolbar div input {
     width: 300px;
 }
+*/
