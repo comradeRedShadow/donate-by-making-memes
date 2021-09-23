@@ -23,7 +23,8 @@ let default_text = {
     left: 0.5*canvas_config.width,
     fontSize: 20,
     lineHeight: 1.3,
-    strokeWidth: 1
+    strokeWidth: 1,
+    splitByGrapheme: true
 }
 
 c.setDimensions(canvas_config);
