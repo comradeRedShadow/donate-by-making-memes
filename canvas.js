@@ -25,7 +25,7 @@ let default_text = {
     lineHeight: 1.3,
     lockUniScaling: true,
     strokeWidth: 1,
-    lockScalingX: true,
+    lockScalingX: false,
     lockScalingY: true
 }
 
