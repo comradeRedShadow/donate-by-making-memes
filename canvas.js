@@ -23,8 +23,7 @@ let default_text = {
     left: 0.5*canvas_config.width,
     fontSize: 20,
     lineHeight: 1.3,
-    lockUniScaling: true,
-    strokeWidth: 1,
+    strokeWidth: 1
 }
 
 c.setDimensions(canvas_config);
