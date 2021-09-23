@@ -7,7 +7,6 @@ window.devicePixelRatio = 2;
 
 // config
 
-/*
 let canvas_config = {
     width: canvasWrapper.offsetWidth,
     height: canvasWrapper.offsetHeight,
@@ -25,7 +24,6 @@ window.addEventListener("resize", () => {
 
     
 });
-*/
 
 // for mobile
 
@@ -33,14 +31,12 @@ window.addEventListener("resize", () => {
 
 if(window.innerWidth <= '600')
 {
-    /*
     canvas_config.width = window.innerWidth - 25;
     canvas_config.height = 433;
     
     fabric.Object.prototype.set({
         borderScaleFactor: 3
     })
-    */
 }
 
 
