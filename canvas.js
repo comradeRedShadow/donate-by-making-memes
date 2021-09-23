@@ -25,8 +25,6 @@ let default_text = {
     lineHeight: 1.3,
     lockUniScaling: true,
     strokeWidth: 1,
-    lockScalingX: false,
-    lockScalingY: true
 }
 
 c.setDimensions(canvas_config);
