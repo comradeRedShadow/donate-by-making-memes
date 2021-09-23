@@ -1,20 +1,48 @@
 const c = new fabric.Canvas("canvas");
 const c_style = document.getElementById("canvas");
 
+const canvasWrapper = document.getElementById("canvas-wrapper");
+
 window.devicePixelRatio = 2;
 
 // config
-let canvas_config = {width: 577, height: 433, backgroundColor: '#ffffff'}
+
+/*
+let canvas_config = {
+    width: canvasWrapper.offsetWidth,
+    height: canvasWrapper.offsetHeight,
+    backgroundColor: '#ffffff'
+}
+
+window.addEventListener("resize", () => {
+    
+    canvas_config.width = canvasWrapper.offsetWidth;
+    canvas_config.height = canvasWrapper.offsetHeight;
+
+    c.setDimensions(canvas_config);
+
+    console.log(canvas_config.width);
+
+    
+});
+*/
 
 // for mobile
+
+
+
 if(window.innerWidth <= '600')
 {
+    /*
     canvas_config.width = window.innerWidth - 25;
     canvas_config.height = 433;
+    
     fabric.Object.prototype.set({
         borderScaleFactor: 3
     })
+    */
 }
+
 
 let default_text = {
     fontFamily: "Arial",
