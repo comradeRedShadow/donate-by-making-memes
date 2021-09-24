@@ -54,17 +54,20 @@
         <!-- choose style of text -->
         <div id="choose_style">
             <small>စာ အကြီး၊ အသေး</small>
-            <input type="text" id="font_size"><br>
+            <input type="number" id="font_size"><br>
     
-            <small>Justify</small>
-            <label for="left">လက်ဝဲ</label>
-            <input type="radio" name="justify" value="left" id="left">
+            <div id="justify">
+                <small>Justify</small>
+                <br>
+                <label for="left">လက်ဝဲ</label>
+                <input type="radio" name="justify" value="left" id="left">
 
-            <label for="center">အလယ်</label>
-            <input type="radio" name="justify" value="center" id="center">
+                <label for="center">အလယ်</label>
+                <input type="radio" name="justify" value="center" id="center">
 
-            <label for="right">လက်ယာ</label>
-            <input type="radio" name="justify" value="right" id="right"><br>
+                <label for="right">လက်ယာ</label>
+                <input type="radio" name="justify" value="right" id="right">
+            </div><br>
             <br>
             <button class="btn btn-success" onclick="set_style()">Continue</button>
         </div>

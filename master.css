@@ -93,6 +93,11 @@ canvas {
     display: none;
 }
 
+#justify {
+    border: 1px dotted black;
+    width: max-content;
+    padding: 10px;
+}
 
 #custom_or_buildin_template div {
     display: grid;
@@ -132,10 +137,6 @@ canvas {
     margin-bottom: 20px;
     display: inline-block;
     margin-right: 10px;
-}
-
-#choose_style input {
-    display: inline-block;
 }
 
 /*
