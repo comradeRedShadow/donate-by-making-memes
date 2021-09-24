@@ -2,7 +2,7 @@ const loading = document.getElementById("loading");
 const custom_or_buildin_template = document.getElementById('custom_or_buildin_template');
 const choose_style = document.getElementById("choose_style");
 const font_size = document.getElementById("font_size");
-const justify = document.getElementById("justify");
+const justify = document.getElementsByName("justify");
 const buildin_templates = document.getElementById("buildin_templates");
 
 const up_text = document.getElementById("up_text");
@@ -25,11 +25,11 @@ function choose_style_fun() {
 
         if(typeof(fz) != "number")
         {
-            font_size.value = 16;
+            font_size.value = default_text.fontSize;
         }
-        if(jus != "center" || jus != "middle"|| jus == "left" || jus == "right")
+        if(jus != "center" || jus == "left" || jus == "right")
         {
-            justify.value = 'left';
+            justify.value = default_text.textAlign;
         } else {
             font_size.value = fz;
             justify.value = jus;
@@ -39,13 +39,23 @@ function choose_style_fun() {
 }
 
 function set_style() {
+    let justify_v;
+
+    for(let i of justify) {
+        if(i.checked) {
+            justify_v = i.value;
+            break;
+        }
+    }
     if(c.getActiveObject() == undefined)
     {
         default_text.fontSize = font_size.value;
-        default_text.textAlign = justify.value;
+        default_text.textAlign = justify_v;
+       
     } else {
+        console.log(justify.value);
         c.getActiveObject().fontSize = font_size.value;
-        c.getActiveObject().textAlign = justify.value;
+        c.getActiveObject().textAlign = justify_v;
         c.renderAll();
     }
 
@@ -66,12 +76,10 @@ function show_buildin_templates()
 function custom_tp()
 {
     custom_up.addEventListener("change", () => {
-        custom_or_buildin_template.style.display = 'none';
-
         drawImage()
-        choose_template()
 
     }, {once: true})
+    custom_or_buildin_template.style.display = 'none';
     custom_up.click()
 }
 

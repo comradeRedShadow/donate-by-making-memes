@@ -135,7 +135,7 @@ canvas {
 }
 
 #choose_style input {
-    width: 100px;
+    display: inline-block;
 }
 
 /*

@@ -24,7 +24,8 @@ let default_text = {
     fontSize: 20,
     lineHeight: 1.3,
     strokeWidth: 1,
-    splitByGrapheme: false
+    splitByGrapheme: false,
+    textAlign: 'center'
 }
 
 c.setDimensions(canvas_config);
