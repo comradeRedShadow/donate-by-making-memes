@@ -155,7 +155,7 @@ let line2 = new fabric.Line([0, canvas_y_center, canvas_config.width, canvas_y_c
 // canvas event handler
 c.on('object:moving', (event) => {
     window.addEventListener("mouseup", () => {c.remove(line1); c.remove(line2)}, {once: true});
-
+    c.on('selection:cleared', () => {c.remove(line1); c.remove(line2)})
     let left = parseInt(event.target.left);
     let top = parseInt(event.target.top);
 
