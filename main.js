@@ -140,34 +140,3 @@ function removeObject()
 window.addEventListener("load", () => {
     loading.style.display = 'none';
 })
-
-let canvas_x_center = parseInt(c.width / 2);
-let canvas_y_center = parseInt(c.height / 2);
-
-let line1 = new fabric.Line([canvas_x_center, 0, canvas_x_center, canvas_config.height], {
-    stroke: 'orange'
-});
-
-let line2 = new fabric.Line([0, canvas_y_center, canvas_config.width, canvas_y_center], {
-    stroke: 'orange'
-});
-
-// canvas event handler
-c.on('object:moving', (event) => {
-    window.addEventListener("mouseup", () => {c.remove(line1); c.remove(line2)}, {once: true});
-    c.on('selection:cleared', () => {c.remove(line1); c.remove(line2)})
-    let left = parseInt(event.target.left);
-    let top = parseInt(event.target.top);
-
-    if(left == canvas_x_center) {
-        c.add(line1)
-    } else {
-        c.remove(line1)
-    }
-
-    if(top == canvas_y_center) {
-        c.add(line2)
-    } else {
-        c.remove(line2)
-    }
-})
