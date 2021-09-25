@@ -1,8 +1,11 @@
 const loading = document.getElementById("loading");
 const custom_or_buildin_template = document.getElementById('custom_or_buildin_template');
 const choose_style = document.getElementById("choose_style");
+
 const font_size = document.getElementById("font_size");
 const justify = document.getElementsByName("justify");
+const textColor = document.getElementById("textColor");
+
 const buildin_templates = document.getElementById("buildin_templates");
 
 const up_text = document.getElementById("up_text");
@@ -15,13 +18,16 @@ const custom_up = document.getElementById('custom_up');
 
 
 function choose_style_fun() {
+    let activeObject = c.getActiveObject();
 
+    if(activeObject) {textColor.value = activeObject.fill;} else {textColor.value = '#000000'}
+    
     if(choose_style.style.display != 'block')
     {
         choose_style.style.display = 'block';
         
-        let fz = c.getActiveObject().fontSize;
-        let jus = c.getActiveObject().textAlign
+        let fz = activeObject.fontSize;
+        let jus = activeObject.textAlign;
 
         if(typeof(fz) != "number")
         {
@@ -30,32 +36,38 @@ function choose_style_fun() {
         if(jus != "center" || jus == "left" || jus == "right")
         {
             justify.value = default_text.textAlign;
-        } else {
+        }
+        else {
             font_size.value = fz;
             justify.value = jus;
         }
+
     } else {choose_style.style.display = 'none';}
     
 }
 
 function set_style() {
     let justify_v;
+    let activeObject = c.getActiveObject();
 
     for(let i of justify) {
         if(i.checked) {
             justify_v = i.value;
             break;
+        } else {
+            justify_v = "center"
         }
     }
-    if(c.getActiveObject() == undefined)
+    if(activeObject == undefined)
     {
         default_text.fontSize = font_size.value;
         default_text.textAlign = justify_v;
        
     } else {
-        console.log(justify.value);
-        c.getActiveObject().fontSize = font_size.value;
-        c.getActiveObject().textAlign = justify_v;
+        activeObject.fontSize = font_size.value;
+
+        activeObject.textAlign = justify_v;
+        activeObject.set('fill', textColor.value);
         c.renderAll();
     }
 
