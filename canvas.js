@@ -37,11 +37,12 @@ let default_text = {
 }
 
 c.setDimensions(canvas_config);
-  
+
 // const c = canvas.getContext("2d");
 
 function drawImage(build_in=false, num) 
 {
+
     let fReader = new FileReader();
     // create image
     let img = new Image();
@@ -59,6 +60,9 @@ function drawImage(build_in=false, num)
         c.add(img_);
         c.centerObject(img_);
         c.renderAll();
+
+        c.bringToFront(text);
+        c.bringToFront(text2);
     }
 
     if(build_in == true)
@@ -104,6 +108,7 @@ function upanddown() {
 
     text2 = new fabric.Textbox("အောက်ကစာ", down_text_style)
     c.add(text2);
+
     c.renderAll();
 }
 
@@ -112,6 +117,7 @@ upanddown()
 function addText(style) {
     txt = new fabric.Textbox("စာ", style)
     c.add(txt);
+    c.bringToFront(txt);
     c.centerObject(txt)
     c.renderAll()
 }
