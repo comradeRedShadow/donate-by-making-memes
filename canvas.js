@@ -21,7 +21,7 @@ let default_text = {
     editable: true,
     originX: "center",
     left: 0.5*canvas_config.width,
-    fontSize: 11,
+    fontSize: 16,
     lineHeight: 1.3,
     strokeWidth: 1,
     splitByGrapheme: false,
