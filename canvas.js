@@ -4,7 +4,11 @@ const c_style = document.getElementById("canvas");
 window.devicePixelRatio = 2;
 
 // config
-let canvas_config = {width: 577, height: 433, backgroundColor: '#ffffff'}
+let canvas_config = {
+    width: 577,
+    height: 433,
+    backgroundColor: '#ffffff'
+}
 
 // for mobile
 if(window.innerWidth <= '600')
@@ -13,8 +17,11 @@ if(window.innerWidth <= '600')
     canvas_config.height = 300;
     fabric.Object.prototype.set({
         borderScaleFactor: 3,
-        cornorSize: 3
+        transparentCorners: false,
+        cornerColor: 'gray',
+        cornerSize: 6
     })
+
 }
 
 let default_text = {
@@ -30,7 +37,7 @@ let default_text = {
 }
 
 c.setDimensions(canvas_config);
-
+  
 // const c = canvas.getContext("2d");
 
 function drawImage(build_in=false, num) 
