@@ -19,7 +19,7 @@ if(window.innerWidth <= '600')
         borderScaleFactor: 3,
         transparentCorners: false,
         cornerColor: 'gray',
-        cornerSize: 6
+        cornerSize: 10
     })
 
 }
