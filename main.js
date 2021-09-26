@@ -138,7 +138,7 @@ async function saveImage()
 
     let tb = c.height - 13; // text bottom
     let tr = c.width - 108; // text right
-    c.add(new fabric.Text("https://bit.ly/donatebymemes", {fontSize: 9, left: tr, top: tb, stroke: '#FFFF00', fill: '#000000', strokeWidth: 2}));
+    c.add(new fabric.Text("https://bit.ly/donatebymemes", {fontSize: 9, left: tr, top: tb}));
     
     c.setZoom(4);
     c.setWidth(canvas_config.width * c.getZoom())
