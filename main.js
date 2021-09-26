@@ -129,8 +129,8 @@ async function saveImage()
         image_to_save.setAttribute("href", image.src);
         image_to_save.click();
 
-        c.setZoom(1)
-        c.clear()
+        c.setZoom(1);
+        c.clear();
         c.setWidth(canvas_config.width);
         c.setHeight(canvas_config.height);
         upanddown();
