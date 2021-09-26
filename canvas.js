@@ -12,7 +12,8 @@ if(window.innerWidth <= '600')
     canvas_config.width = window.innerWidth - 25;
     canvas_config.height = 300;
     fabric.Object.prototype.set({
-        borderScaleFactor: 3
+        borderScaleFactor: 3,
+        cornorSize: 6
     })
 }
 
