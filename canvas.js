@@ -17,9 +17,8 @@ if(window.innerWidth <= '600')
     canvas_config.height = 300;
     fabric.Object.prototype.set({
         borderScaleFactor: 3,
-        transparentCorners: false,
-        cornerColor: 'gray',
-        cornerSize: 7
+        transparentCorners: true,
+        cornerColor: 'gray'
     })
 
 }
