@@ -1,6 +1,7 @@
 const loading = document.getElementById("loading");
 const custom_or_buildin_template = document.getElementById('custom_or_buildin_template');
 const choose_style = document.getElementById("choose_style");
+const hidden_canvas = document.getElementById("hidden_canvas");
 
 const font_size = document.getElementById("font_size");
 const justify = document.getElementsByName("justify");
@@ -122,11 +123,21 @@ down_text.addEventListener("keyup", (event) => {
 async function saveImage()
 {   
     let image = new Image();
+    let watermarked_image = new Image();
 
+    let hc = hidden_canvas.getContext("2d");
+    hidden_canvas.width = 577;
+    hidden_canvas.height = 483;
+
+    watermarked_image.onload = () => {
+        image_to_save.setAttribute("href", watermarked_image.src);
+        image_to_save.click()
+    }
     image.onload = () => {
         c.setWidth(canvas_config.width);
         c.setHeight(canvas_config.height);
 
+        /*
         image_to_save.setAttribute("href", image.src);
         image_to_save.click();
 
@@ -134,6 +145,25 @@ async function saveImage()
         c.setWidth(canvas_config.width);
         c.setHeight(canvas_config.height);
         upanddown();
+        */
+
+       // add watermark
+       let fReader = new FileReader();
+       fetch('./images/watermark.png')
+       .then(data => {return data.blob()})
+       .then(response => {
+            fReader.onloadend = (event) => {
+                let wm = new Image();
+                wm.src = event.target.result;
+                hc.drawImage(image, 0, 0, hidden_canvas.width, hidden_canvas.height - 50);
+                hc.drawImage(wm, 0, 433, hidden_canvas.width, 50)
+                watermarked_image.src = hidden_canvas.toDataURL("image/jpeg");
+            }
+
+            fReader.readAsDataURL(response);
+       })
+       
+       upanddown();
     }
 
 
