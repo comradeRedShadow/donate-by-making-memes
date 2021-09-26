@@ -132,6 +132,7 @@ async function saveImage()
         c.setZoom(1)
         c.setWidth(canvas_config.width);
         c.setHeight(canvas_config.height);
+        c.clear();
         upanddown();
     }
 
