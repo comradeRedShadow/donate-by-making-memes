@@ -129,13 +129,17 @@ async function saveImage()
         image_to_save.setAttribute("href", image.src);
         image_to_save.click();
 
-        canvas.setZoom(1)
+        c.setZoom(1)
         c.setWidth(canvas_config.width);
         c.setHeight(canvas_config.height);
         upanddown();
     }
 
 
+    let tb = c.height - 14; // text bottom
+    let tr = c.width - 104; // text right
+    c.add(new fabric.Text("bit.ly/donatebymemes", {fontSize: 11, left: tr, top: tb}));
+    
     c.setZoom(4);
     c.setWidth(canvas_config.width * c.getZoom())
     c.setHeight(canvas_config.height * c.getZoom())
