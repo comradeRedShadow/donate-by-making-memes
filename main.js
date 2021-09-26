@@ -1,7 +1,6 @@
 const loading = document.getElementById("loading");
 const custom_or_buildin_template = document.getElementById('custom_or_buildin_template');
 const choose_style = document.getElementById("choose_style");
-const hidden_canvas = document.getElementById("hidden_canvas");
 
 const font_size = document.getElementById("font_size");
 const justify = document.getElementsByName("justify");
