@@ -58,10 +58,13 @@ function drawImage(build_in=false, num)
         img_.scaleToHeight(300)
         c.add(img_);
         c.centerObject(img_);
-        c.renderAll();
+        
 
-        c.bringToFront(text);
-        c.bringToFront(text2);
+        if(c.getObjects().indexOf(text) >= 0) {c.bringToFront(text);}
+
+        if(c.getObjects().indexOf(text2) >= 0) {c.bringToFront(text2);}
+
+        c.renderAll();
     }
 
     if(build_in == true)
@@ -85,8 +88,6 @@ function drawImage(build_in=false, num)
 // up and down text
 let text;
 let text2;
-
-
 
 let text_margin = 5
 
