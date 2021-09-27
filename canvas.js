@@ -24,10 +24,11 @@ if(window.innerWidth <= '600')
 }
 
 let default_text = {
-    fontFamily: "Arial",
+    fontFamily: 'Arial',
     editable: true,
-    originX: "center",
-    left: 0.5*canvas_config.width,
+    originX: 'left',
+    width: 100,
+    left: canvas_config.width / 2 - 50,
     fontSize: 16,
     lineHeight: 1.3,
     strokeWidth: 1,
@@ -122,3 +123,23 @@ function addText(style) {
     c.renderAll()
 }
 
+// Auto align when object is near center
+const canvas_x_center = canvas_config.width / 2;
+const canvas_y_center = canvas_config.height / 2;
+
+const near_value = 10; // Object will align automically when it's near the center by near_value
+
+c.on('object:moving', (e) => {
+    let object_x_center = e.target.left + e.target.width / 2;
+    let object_y_center = e.target.top + e.target.height / 2;
+
+    if(object_x_center > canvas_x_center - near_value && object_x_center < canvas_x_center + near_value) {
+        e.target.left = canvas_x_center - e.target.width / 2;
+        c.renderAll()
+    }
+
+    if(object_y_center > canvas_y_center - near_value && object_y_center < canvas_y_center + near_value) {
+        e.target.top = canvas_y_center - e.target.height / 2;
+        c.renderAll()
+    }
+})

@@ -79,6 +79,25 @@ function show_buildin_templates()
 {
     if(buildin_templates.style.display != 'block')
     {
+
+        // Load and show build in templates
+        let id = 0;
+        for(let num=1; num < 17; num++) {
+            // for loop 1 - 17 will load images from 1 to 16
+            let fReader =  new FileReader();
+
+            fReader.onloadend = (e) => {
+                buildin_templates.innerHTML += `<img src="${e.target.result}" id="${id}" alt="${num}" onclick="drawImage(true, this.id)">`
+            }
+            
+            fetch(`./images/${num}.jpeg`).then((data) => {
+                id++;
+                return data.blob()
+            }).then((data) => {
+                fReader.readAsDataURL(data);
+            })
+        }
+
         buildin_templates.style.display = 'block';
     } else {
         buildin_templates.style.display = 'none';
@@ -122,6 +141,11 @@ down_text.addEventListener("keyup", (event) => {
 async function saveImage()
 {   
     let image = new Image();
+
+    let tb = c.height - 13; // text bottom
+    let tr = c.width - 108; // text right
+    let wm = new fabric.Text("https://bit.ly/donatebymemes", {fontSize: 9, left: tr, top: tb});
+
     image.onload = () => {
         c.setWidth(canvas_config.width);
         c.setHeight(canvas_config.height);
@@ -132,13 +156,10 @@ async function saveImage()
         c.setZoom(1);
         c.setWidth(canvas_config.width);
         c.setHeight(canvas_config.height);
-        upanddown();
+        c.remove(wm);
     }
 
-
-    let tb = c.height - 13; // text bottom
-    let tr = c.width - 108; // text right
-    c.add(new fabric.Text("https://bit.ly/donatebymemes", {fontSize: 9, left: tr, top: tb}));
+    c.add(wm);
     
     c.setZoom(4);
     c.setWidth(canvas_config.width * c.getZoom())
