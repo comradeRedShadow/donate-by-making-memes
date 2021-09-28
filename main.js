@@ -144,7 +144,7 @@ async function saveImage()
 
     let tb = c.height - 13; // text bottom
     let tr = c.width - 108; // text right
-    let wm = new fabric.Text("https://bit.ly/donatebymemes", {fontSize: 9, left: tr, top: tb});
+    let wm = new fabric.Text("https://bit.ly/donatebymemes", {fontSize: 9, left: tr, top: tb, underline: true});
 
     image.onload = () => {
         c.setWidth(canvas_config.width);
