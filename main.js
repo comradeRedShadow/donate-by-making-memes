@@ -87,11 +87,11 @@ function show_buildin_templates()
             let fReader =  new FileReader();
 
             fReader.onloadend = (e) => {
-                buildin_templates.innerHTML += `<img src="${e.target.result}" id="${num}" alt="${num}" onclick="drawImage(true, this.id)">`
+                buildin_templates.innerHTML += `<img src="${e.target.result}" id="${id}" alt="${num}" onclick="drawImage(true, this.id)">`
+                id++;
             }
             
             fetch(`./images/${num}.jpeg`).then((data) => {
-                id++;
                 return data.blob()
             }).then((data) => {
                 fReader.readAsDataURL(data);
