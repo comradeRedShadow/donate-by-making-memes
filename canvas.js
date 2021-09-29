@@ -26,9 +26,8 @@ if(window.innerWidth <= '600')
 let default_text = {
     fontFamily: 'Arial',
     editable: true,
-    originX: 'center',
     width: 100,
-    left: canvas_config.width / 2,
+    left: canvas_config.width / 2 - 50,
     fontSize: 16,
     lineHeight: 1.3,
     strokeWidth: 1,
@@ -130,16 +129,24 @@ const canvas_y_center = canvas_config.height / 2;
 const near_value = 10; // Object will align automically when it's near the center by near_value
 
 c.on('object:moving', (e) => {
-    let object_x_center = e.target.left;
-    let object_y_center = e.target.top + e.target.height / 2;
-
-    if(object_x_center > canvas_x_center - near_value && object_x_center < canvas_x_center + near_value) {
-        e.target.left = canvas_x_center; // Left is relative to middle of the object(text)
-        c.renderAll()
-    }
-
-    if(object_y_center > canvas_y_center - near_value && object_y_center < canvas_y_center + near_value) {
-        e.target.top = canvas_y_center - e.target.height / 2;
-        c.renderAll()
-    }
+    let object = c.getActiveObject();
+    const objectMiddleFromLeft = object.getCenterPoint().x;
+    const objectMiddleFromTop = object.getCenterPoint().y;
+  
+    object.setPositionByOrigin(
+      {
+        x:
+          objectMiddleFromLeft > canvas.width / 2 - near_value &&
+          objectMiddleFromLeft < canvas.width / 2 + near_value
+            ? canvas_x_center
+            : objectMiddleFromLeft,
+        y:
+          objectMiddleFromTop > canvas.height / 2 - 15 &&
+          objectMiddleFromTop < canvas.height / 2 + 15
+            ? canvas_x_center
+            : objectMiddleFromTop,
+      },
+      "center",
+      "center"
+    );
 })
