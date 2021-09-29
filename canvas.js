@@ -136,13 +136,13 @@ c.on('object:moving', (e) => {
     object.setPositionByOrigin(
       {
         x:
-          objectMiddleFromLeft > canvas.width / 2 - near_value &&
-          objectMiddleFromLeft < canvas.width / 2 + near_value
+          objectMiddleFromLeft > c.width / 2 - near_value &&
+          objectMiddleFromLeft < c.width / 2 + near_value
             ? canvas_x_center
             : objectMiddleFromLeft,
         y:
-          objectMiddleFromTop > canvas.height / 2 - 15 &&
-          objectMiddleFromTop < canvas.height / 2 + 15
+          objectMiddleFromTop > c.height / 2 - 15 &&
+          objectMiddleFromTop < c.height / 2 + 15
             ? canvas_x_center
             : objectMiddleFromTop,
       },
