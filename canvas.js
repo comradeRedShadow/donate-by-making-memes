@@ -143,7 +143,7 @@ c.on('object:moving', (e) => {
         y:
           objectMiddleFromTop > c.height / 2 - near_value &&
           objectMiddleFromTop < c.height / 2 + near_value
-            ? canvas_x_center
+            ? canvas_y_center
             : objectMiddleFromTop,
       },
       "center",
