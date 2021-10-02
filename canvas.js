@@ -141,8 +141,8 @@ c.on('object:moving', (e) => {
             ? canvas_x_center
             : objectMiddleFromLeft,
         y:
-          objectMiddleFromTop > c.height / 2 - 15 &&
-          objectMiddleFromTop < c.height / 2 + 15
+          objectMiddleFromTop > c.height / 2 - near_value &&
+          objectMiddleFromTop < c.height / 2 + near_value
             ? canvas_x_center
             : objectMiddleFromTop,
       },
