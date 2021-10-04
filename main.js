@@ -74,7 +74,7 @@ function set_style() {
     choose_style_fun()
 }
 
-
+let already_show_templates = false;
 function show_buildin_templates()
 {
     if(buildin_templates.style.display != 'block')
@@ -85,10 +85,13 @@ function show_buildin_templates()
         for(let num=1; num < 17; num++) {
             // for loop 1 - 17 will load images from 1 to 16
             let fReader =  new FileReader();
-
-            fReader.onloadend = (e) => {
-                buildin_templates.innerHTML += `<img src="${e.target.result}" id="${id}" alt="${num}" onclick="drawImage(true, this.id)">`
-                id++;
+            
+            if(already_show_templates == false) {
+                fReader.onloadend = (e) => {
+                    buildin_templates.innerHTML += `<img src="${e.target.result}" id="${id}" loading="lazy" onclick="drawImage(true, this.id)">`;
+                    id++;
+                    already_show_templates = true;
+                }
             }
             
             fetch(`./images/${num}.jpeg`).then((data) => {
