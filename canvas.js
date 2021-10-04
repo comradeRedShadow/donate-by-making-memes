@@ -126,7 +126,7 @@ function addText(style) {
 const canvas_x_center = canvas_config.width / 2;
 const canvas_y_center = canvas_config.height / 2;
 
-const near_value = 5; // Object will align automically when it's near the center by near_value
+const near_value = 10; // Object will align automically when it's near the center by near_value
 
 c.on('object:moving', (e) => {
     let object = c.getActiveObject();
@@ -136,14 +136,14 @@ c.on('object:moving', (e) => {
     object.setPositionByOrigin(
       {
         x:
-          objectMiddleFromLeft > c.width / 2 - near_value &&
-          objectMiddleFromLeft < c.width / 2 + near_value
+          objectMiddleFromLeft > canvas.width / 2 - near_value &&
+          objectMiddleFromLeft < canvas.width / 2 + near_value
             ? canvas_x_center
             : objectMiddleFromLeft,
         y:
-          objectMiddleFromTop > c.height / 2 - near_value &&
-          objectMiddleFromTop < c.height / 2 + near_value
-            ? canvas_y_center
+          objectMiddleFromTop > canvas.height / 2 - 15 &&
+          objectMiddleFromTop < canvas.height / 2 + 15
+            ? canvas_x_center
             : objectMiddleFromTop,
       },
       "center",
