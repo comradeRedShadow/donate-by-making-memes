@@ -109,6 +109,7 @@ function show_buildin_templates()
 
 function custom_tp()
 {
+    show_buildin_templates()
     custom_up.addEventListener("change", () => {
         drawImage()
 
