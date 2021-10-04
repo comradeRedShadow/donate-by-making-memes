@@ -69,19 +69,20 @@ function drawImage(build_in=false, num)
 
     if(build_in == true)
     {
-        fetch(`./images/${num}.jpeg`).then((data) => {
-            return data.blob()
-        }).then((data) => {
-            fReader.readAsDataURL(data);
-            document.getElementById("buildin_templates").style.display = 'none';
-            document.getElementById('custom_or_buildin_template').style.display = 'none'
-        })
-    }
-    else {fReader.readAsDataURL(custom_up.files[0])}
+        let data = document.getElementById(num);
 
-    fReader.onloadend = (event) =>{
-        // load image
-        img.src = event.target.result;
+        // fReader.readAsDataURL(data);
+        img.src = data.src;
+        document.getElementById("buildin_templates").style.display = 'none';
+        document.getElementById('custom_or_buildin_template').style.display = 'none'
+    }
+    else {
+
+        fReader.onloadend = (event) =>{
+            // load image
+            img.src = event.target.result;
+        }
+        fReader.readAsDataURL(custom_up.files[0])
     }
 }
 
@@ -126,7 +127,7 @@ function addText(style) {
 const canvas_x_center = canvas_config.width / 2;
 const canvas_y_center = canvas_config.height / 2;
 
-const near_value = 10; // Object will align automically when it's near the center by near_value
+const near_value = 5; // Object will align automically when it's near the center by near_value
 
 c.on('object:moving', (e) => {
     let object = c.getActiveObject();
@@ -136,14 +137,14 @@ c.on('object:moving', (e) => {
     object.setPositionByOrigin(
       {
         x:
-          objectMiddleFromLeft > canvas.width / 2 - near_value &&
-          objectMiddleFromLeft < canvas.width / 2 + near_value
+          objectMiddleFromLeft > c.width / 2 - near_value &&
+          objectMiddleFromLeft < c.width / 2 + near_value
             ? canvas_x_center
             : objectMiddleFromLeft,
         y:
-          objectMiddleFromTop > canvas.height / 2 - 15 &&
-          objectMiddleFromTop < canvas.height / 2 + 15
-            ? canvas_x_center
+          objectMiddleFromTop > c.height / 2 - near_value &&
+          objectMiddleFromTop < c.height / 2 + near_value
+            ? canvas_y_center
             : objectMiddleFromTop,
       },
       "center",
