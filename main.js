@@ -77,7 +77,7 @@ function set_style() {
 let already_show_templates = false;
 function show_buildin_templates()
 {
-    choose_template() // Don't display custom_or_buildin_template
+    choose_template(); // Don't display custom_or_buildin_template
     if(buildin_templates.style.display != 'block')
     {
 
