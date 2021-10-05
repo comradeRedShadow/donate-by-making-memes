@@ -84,7 +84,7 @@ function show_buildin_templates()
         buildin_templates.style.display = 'block';
 
         let id = 0;
-        for(let num=1; num < 17; num++) {
+        for(let num=1; num < 20; num++) {
             // for loop 1 - 17 will load images from 1 to 16
             let fReader =  new FileReader();
             
@@ -101,7 +101,7 @@ function show_buildin_templates()
                 fReader.readAsDataURL(data);
             })
         }
-        
+
         already_show_templates = true;
     } else {
         buildin_templates.style.display = 'none';
