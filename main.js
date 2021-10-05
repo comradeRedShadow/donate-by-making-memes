@@ -100,9 +100,12 @@ function show_buildin_templates()
                 fReader.readAsDataURL(data);
             })
 
+            if(num >= 17) {
+                document.getElementById("tp_loading").style.display = 'none';
+            }
+
         }
         already_show_templates = true;
-        document.getElementById("tp_loading").style.display = 'none';
         buildin_templates.style.display = 'block';
     } else {
         buildin_templates.style.display = 'none';
