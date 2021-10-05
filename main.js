@@ -82,7 +82,7 @@ function show_buildin_templates()
     {
         // Load and show build in templates
         buildin_templates.style.display = 'block';
-        
+
         let id = 0;
         for(let num=1; num < 17; num++) {
             // for loop 1 - 17 will load images from 1 to 16
@@ -101,7 +101,7 @@ function show_buildin_templates()
                 fReader.readAsDataURL(data);
             })
 
-            if(num >= 17) {
+            if(num >= 16) {
                 document.getElementById("tp_loading").style.display = 'none';
             }
 
