@@ -91,6 +91,11 @@ canvas {
     min-height: 100px;
     display: inline-block;
 }
+
+#templates {
+    display: inline-block;
+}
+
 #custom_up
 {
     display: none;

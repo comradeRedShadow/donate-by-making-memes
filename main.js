@@ -7,6 +7,7 @@ const justify = document.getElementsByName("justify");
 const textColor = document.getElementById("textColor");
 
 const buildin_templates = document.getElementById("buildin_templates");
+const templates = document.getElementById("templates"); // show buildin templates
 
 const up_text = document.getElementById("up_text");
 const down_text = document.getElementById("down_text")
@@ -90,8 +91,11 @@ function show_buildin_templates()
             
             if(already_show_templates == false) {
                 fReader.onloadend = (e) => {
-                    buildin_templates.innerHTML += `<img src="${e.target.result}" id="${id}" loading="lazy" onclick="drawImage(true, this.id)">`;
+                    templates.innerHTML += `<img src="${e.target.result}" id="${id}" loading="lazy" onclick="drawImage(true, this.id)">`;
                     id++;
+                    if(id >= 19) {
+                        document.getElementById("tp_loading").style.display = 'none';
+                    }
                 }
             }
             
