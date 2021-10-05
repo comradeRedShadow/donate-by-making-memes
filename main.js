@@ -80,9 +80,9 @@ function show_buildin_templates()
     choose_template(); // Don't display custom_or_buildin_template
     if(buildin_templates.style.display != 'block')
     {
-
         // Load and show build in templates
         buildin_templates.style.display = 'block';
+        
         let id = 0;
         for(let num=1; num < 17; num++) {
             // for loop 1 - 17 will load images from 1 to 16
