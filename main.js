@@ -100,12 +100,8 @@ function show_buildin_templates()
             }).then((data) => {
                 fReader.readAsDataURL(data);
             })
-
-            if(num >= 16) {
-                document.getElementById("tp_loading").style.display = 'none';
-            }
-
         }
+        
         already_show_templates = true;
     } else {
         buildin_templates.style.display = 'none';
