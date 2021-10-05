@@ -88,7 +88,7 @@ function show_buildin_templates()
             
             if(already_show_templates == false) {
                 fReader.onloadend = (e) => {
-                    buildin_templates.innerHTML += `<img src="${e.target.result}" id="${id}" onclick="drawImage(true, this.id)">`;
+                    buildin_templates.innerHTML += `<img src="${e.target.result}" id="${id}" loading="lazy" onclick="drawImage(true, this.id)">`;
                     id++;
                     already_show_templates = true;
                 }
