@@ -91,7 +91,6 @@ function show_buildin_templates()
                 fReader.onloadend = (e) => {
                     buildin_templates.innerHTML += `<img src="${e.target.result}" id="${id}" loading="lazy" onclick="drawImage(true, this.id)">`;
                     id++;
-                    already_show_templates = true;
                 }
             }
             
@@ -100,8 +99,10 @@ function show_buildin_templates()
             }).then((data) => {
                 fReader.readAsDataURL(data);
             })
-        }
 
+        }
+        already_show_templates = true;
+        document.getElementById("tp_loading").style.display = 'none';
         buildin_templates.style.display = 'block';
     } else {
         buildin_templates.style.display = 'none';
